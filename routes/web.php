@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,8 @@ Route::get('/rain', function () {
     return'Rain-Commerce';
 });
 
+
+Route::get('/all-students', function () {
+    $students = Student::all();
+    return view('student.index', ['students' => $students]);
+});
